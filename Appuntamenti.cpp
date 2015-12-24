@@ -20,13 +20,13 @@ void Appuntamenti::print (std::ostream &os) {
        << "Fine: " << (this->getFine()).getOra() << ":" << (this->getFine()).getMinuti() << ":" << (this->getFine()).getSecondi() << endl
        << "Descrizione: " << (this->getDescrizione()) << endl;
 }
-/*
+//E' necessaria la ridefinzione per usare il metodo getAppuntamento della classe Agenda
 void Appuntamenti::print (std::ostream &os) const {
     os << "Inizio: " << (this->getInizio()).getOra() << ":" << (this->getInizio()).getMinuti() << ":" << (this->getInizio()).getSecondi() << endl
        << "Fine: " << (this->getFine()).getOra() << ":" << (this->getFine()).getMinuti() << ":" << (this->getFine()).getSecondi() << endl
        << "Descrizione: " << (this->getDescrizione()) << endl;
 }
-*/
+
 
 
 double Appuntamenti::durata() const {

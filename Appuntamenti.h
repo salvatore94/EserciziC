@@ -19,12 +19,13 @@ public:
     Appuntamenti(Time&, Time&, string&) ;
     Appuntamenti(int hi, int mi, int si, int hf, int mf, int sf, std::string &des);
 
+    
     const Time& getInizio () const { return this->inizio; }
     const Time& getFine () const { return this->fine; }
     const std::string& getDescrizione () const { return this->descrizione; }
 
     void print (std::ostream&);
-    //void print (std::ostream&) const;
+    void print (std::ostream&) const;
     double durata() const;
 };
 

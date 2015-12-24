@@ -11,6 +11,10 @@ public:
     Time(): Time(0,0,0) {};
     Time(int hh, int mm, int ss) { this->set(hh,mm,ss); }
 
+    bool operator== (const Time&);
+    bool operator== (const Time&) const; 
+
+
     Time& set (int h, int m , int s) { this->setOra(h); this->setMinuti(m); this->setSecondi(s); return *this; }
     const int getOra() const {return this->ora;}
     const int getMinuti() const {return this->minuti;}

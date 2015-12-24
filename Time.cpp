@@ -1,6 +1,16 @@
 #include"Time.h"
 
+bool Time::operator== (const Time &t2) {
+     if ((this->getOra())==t2.getOra() && (this->getMinuti())==t2.getMinuti() && (this->getSecondi())==t2.getSecondi())
+        return true;
+    return false;
+}
 
+bool Time::operator== (const Time &t2) const {
+     if ((this->getOra())==t2.getOra() && (this->getMinuti())==t2.getMinuti() && (this->getSecondi())==t2.getSecondi())
+        return true;
+    return false;
+}
 
 void Time::setOra(int h) {
     if(h>0 && h<24)
