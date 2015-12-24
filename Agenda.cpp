@@ -17,12 +17,15 @@ void Agenda::aggiungi (Appuntamenti &nuovo) {
 }
 
 void Agenda::cerca (const string &des) const {
+    std::cout << "Metodo cerca tramite stringa invocato"<< std::endl;
     for(int i=0; i!=this->dimensione(); ++i)
         if(this->getAppuntamento(i).getDescrizione()==des)
             this->getAppuntamento(i).print(std::cout);
 }
+
 void Agenda::cerca (const Time &ref) const {
+    std::cout << "Metodo cerca tramite Time& invocato"<< std::endl;
     for(int i=0; i!=this->dimensione(); ++i)
-        if(this->getAppuntamento(i).getInizio()==ref)
+        if((this->getAppuntamento(i).getInizio()==ref) || (this->getAppuntamento(i).getFine()==ref))
             this->getAppuntamento(i).print(std::cout);
 }

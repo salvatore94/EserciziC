@@ -46,5 +46,6 @@ int main () {
     es1.getAppuntamento(1).print(cout);
     Agenda es2(a);
     es2.getAppuntamento(0).print(cout);
+    es1.cerca(t2);
     return 0;
 }
