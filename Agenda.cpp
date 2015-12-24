@@ -1,7 +1,13 @@
 #include<iostream>
+#include"Agenda.h"
+Agenda::Agenda() {
+    Appuntamenti test;
+    dati.push_back(test);
+    std::cout << "Cotruttore di default Agenda"<< std:: endl;};
 
-Agenda::Agenda (const Appuntamento &a1) {
+Agenda::Agenda (Appuntamenti &a1) {
     dati.push_back(a1);
+    std::cout <<"Costruttore parametrizzato Agenda"<<std::endl;
 }
 
 void Agenda::aggiungi (const Appuntamenti &nuovo) {
@@ -9,7 +15,7 @@ void Agenda::aggiungi (const Appuntamenti &nuovo) {
     std::cout << "Metodo aggiungi invocato" << std::endl;
 }
 
-void Appuntamenti::cerca (const string &des) const {
+void Agenda::cerca (const string &des) const {
     for(int i=0; i<=dati.getsize(); ++i)
         if(this->getAppuntamento(i).getDescrizione()==des)
             this->getAppuntamento(i).print(std::cout);

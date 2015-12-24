@@ -2,11 +2,7 @@
 #include<string>
 
 #include"Appuntamenti.h"
-Appuntamenti::Appuntamenti() : Time t1, Time t2 {
-    inizio=t1;
-    fine=t2;
-    descrizione="---"
-}
+Appuntamenti::Appuntamenti() :   descrizione("---") {};
 Appuntamenti::Appuntamenti(Time &t1, Time &t2, string &s) {
     this->setInizio(t1);
     this->setFine(t2);
@@ -14,18 +10,23 @@ Appuntamenti::Appuntamenti(Time &t1, Time &t2, string &s) {
 
 }
 Appuntamenti::Appuntamenti(int hi, int mi, int si, int hf, int mf, int sf, std::string &des):
-                                                            Time _inizio(hi, mi, si),
-                                                            Time _fine(hf, mf, sf) {
-                                                                this->setInizio(_inizio);
-                                                                this->setFine(_fine);
-                                                                this->setDescrizione(des);
-                                                            }
+                                                            inizio(hi, mi, si),
+                                                            fine(hf, mf, sf),
+                                                            descrizione(des) {}
+
+
 void Appuntamenti::print (std::ostream &os) {
     os << "Inizio: " << (this->getInizio()).getOra() << ":" << (this->getInizio()).getMinuti() << ":" << (this->getInizio()).getSecondi() << endl
        << "Fine: " << (this->getFine()).getOra() << ":" << (this->getFine()).getMinuti() << ":" << (this->getFine()).getSecondi() << endl
        << "Descrizione: " << (this->getDescrizione()) << endl;
 }
-
+/*
+void Appuntamenti::print (std::ostream &os) const {
+    os << "Inizio: " << (this->getInizio()).getOra() << ":" << (this->getInizio()).getMinuti() << ":" << (this->getInizio()).getSecondi() << endl
+       << "Fine: " << (this->getFine()).getOra() << ":" << (this->getFine()).getMinuti() << ":" << (this->getFine()).getSecondi() << endl
+       << "Descrizione: " << (this->getDescrizione()) << endl;
+}
+*/
 
 
 double Appuntamenti::durata() const {

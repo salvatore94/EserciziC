@@ -2,20 +2,21 @@
 #define AGENDA_H
 
 #include"Appuntamenti.h"
-#include"Agenda.cpp"
+#include<vector>
+
 class Agenda {
-    vector<Appuntamenti> dati;
+    std::vector<Appuntamenti> dati;
 
 public:
-    Agenda();
-    Agenda (const Appuntamento&);
-    Agenda (int hi, int mi, int si, int hf, int mf, int sf, std::string &des) : Appuntamenti a1(hi,mi,si,hf,mf,sf,des),
-                                                                                Agenda(&a1), {};
+    Agenda() {Appuntamenti test; dati.push_back(test); std::cout << "Cotruttore di default Agenda"<< std:: endl;};
+    Agenda (Appuntamenti&);
+    //Agenda (int hi, int mi, int si, int hf, int mf, int sf, std::string &des) : dati[0](hi,mi,si,hf,mf,sf,des)
+    //                                                                            {};
 
     void aggiungi (const Appuntamenti&);
     void cerca (const Time&) const;
     void cerca (const string&) const;
 
-    const Appuntamento& getAppuntamento (int pos) { return dati[pos];}
+     Appuntamenti& getAppuntamento (int pos) { return dati[pos];}
 };
 #endif

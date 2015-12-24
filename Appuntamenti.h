@@ -23,7 +23,8 @@ public:
     const Time& getFine () const { return this->fine; }
     const std::string& getDescrizione () const { return this->descrizione; }
 
-    void print(std::ostream&);
+    void print (std::ostream&);
+    //void print (std::ostream&) const;
     double durata() const;
 };
 
