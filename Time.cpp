@@ -32,6 +32,9 @@ void Time::setSecondi(int s) {
     else
         this->secondi=0;
 }
+
+
+
 /*
 double Time::timeTotal() const {
     return (((this->getSecondi)+((this->getMinuti)*60)+(((this->getOra)*60)*60)) / 60);

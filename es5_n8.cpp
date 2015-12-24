@@ -43,9 +43,13 @@ int main () {
 
     es1.getAppuntamento(0).print(cout);
     es1.aggiungi(a);
+
+    cout <<"Numero di Appuntamenti contenuti in es1: " << es1.getCount() <<endl;
     es1.getAppuntamento(1).print(cout);
     Agenda es2(a);
     es2.getAppuntamento(0).print(cout);
     es1.cerca(t2);
+    cout <<"Numero di Appuntamenti contenuti in es2: " << es2.getCount() <<endl;
+    
     return 0;
 }

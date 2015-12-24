@@ -4,16 +4,28 @@
 Agenda::Agenda() {
     Appuntamenti test;
     dati.push_back(test);
-    std::cout << "Cotruttore di default Agenda"<< std:: endl;};
+    std::cout << "Cotruttore di default Agenda"<< std:: endl;
+
+    ++count;
+};
 
 Agenda::Agenda (Appuntamenti &a1) {
     dati.push_back(a1);
     std::cout <<"Costruttore parametrizzato Agenda"<<std::endl;
+
+    ++count;
+}
+
+Agenda::~Agenda() {
+    --count;
+    std::cout <<"Distruttore invocato" << std::endl;
 }
 
 void Agenda::aggiungi (Appuntamenti &nuovo) {
     dati.push_back(nuovo);
     std::cout << "Metodo aggiungi invocato" << std::endl;
+
+    ++count;
 }
 
 void Agenda::cerca (const string &des) const {
