@@ -10,13 +10,14 @@ class Appuntamenti {
     Time inizio, fine;
     std::string descrizione;
 
-    void setInizio (Time &t1) { this->inizio = t1; }
-    void setFine (Time &t2) { this->fine = t2; }
-    void setDescrizione (string &s) {this->descrizione = s; }
+    void setInizio (Time &t1) { inizio = t1; }
+    void setFine (Time &t2) { fine = t2; }
+    void setDescrizione (string &s) { descrizione = s; }
 
 public:
     Appuntamenti();
-    Appuntamenti(Time&, Time&, string&);
+    Appuntamenti(Time&, Time&, string&) ;
+    Appuntamenti(int hi, int mi, int si, int hf, int mf, int sf, std::string &des);
 
     const Time& getInizio () const { return this->inizio; }
     const Time& getFine () const { return this->fine; }

@@ -13,7 +13,13 @@ Appuntamenti::Appuntamenti(Time &t1, Time &t2, string &s) {
     this->setDescrizione(s);
 
 }
-
+Appuntamenti::Appuntamenti(int hi, int mi, int si, int hf, int mf, int sf, std::string &des):
+                                                            Time _inizio(hi, mi, si),
+                                                            Time _fine(hf, mf, sf) {
+                                                                this->setInizio(_inizio);
+                                                                this->setFine(_fine);
+                                                                this->setDescrizione(des);
+                                                            }
 void Appuntamenti::print (std::ostream &os) {
     os << "Inizio: " << (this->getInizio()).getOra() << ":" << (this->getInizio()).getMinuti() << ":" << (this->getInizio()).getSecondi() << endl
        << "Fine: " << (this->getFine()).getOra() << ":" << (this->getFine()).getMinuti() << ":" << (this->getFine()).getSecondi() << endl
