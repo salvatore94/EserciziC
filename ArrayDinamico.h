@@ -11,6 +11,8 @@ public:
     ArrayDinamico (int);
 
     ~ArrayDinamico () {delete[] data; std::cout << "Il distruttore è stato invocato" << std::endl;};
+    ArrayDinamico (const ArrayDinamico&); //copy constructor
+    
     ArrayDinamico& operator= (const ArrayDinamico&);
 
     int getDimValue () const {return dimensione;};

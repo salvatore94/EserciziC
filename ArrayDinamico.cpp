@@ -9,6 +9,14 @@ ArrayDinamico::ArrayDinamico (int dim) {
         data[i]=0;
 }
 
+ArrayDinamico::ArrayDinamico (const ArrayDinamico &tocopy) : dimensione(tocopy.getDimValue()){
+    data=new int[dimensione];
+    std::cout << "Costruttore di copia Invocato" << std::endl;
+    for(int i=0; i<= dimensione; ++i)
+        this->at(i)=tocopy.getDataValue(i);
+}
+
+
 void ArrayDinamico::resize (int dim) {
     ArrayDinamico temp(dim);
     for (int i=0; i<=(this->getDimValue()); ++i)
