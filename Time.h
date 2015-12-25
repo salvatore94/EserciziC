@@ -9,16 +9,26 @@ class Time {
 
 public:
     Time(): Time(0,0,0) {};
-    Time(int hh, int mm, int ss) { this->set(hh,mm,ss); }
+    Time(int hh, int mm, int ss) { this->set(hh,mm,ss); };
+
+    Time (const Time&); //copy constructor
 
     bool operator== (const Time&);
-    bool operator== (const Time&) const; 
+    bool operator== (const Time&) const;
+    bool operator< (const Time&);
+    bool operator< (const Time&) const;
+
+    Time& operator+ (const Time&);
+    Time& operator+ (const Time&) const;
+    Time& operator- (const Time&);
+    Time& operator- (const Time&) const;
 
 
     Time& set (int h, int m , int s) { this->setOra(h); this->setMinuti(m); this->setSecondi(s); return *this; }
     const int getOra() const {return this->ora;}
     const int getMinuti() const {return this->minuti;}
     const int getSecondi() const {return this->secondi;}
+
 
     //restituisce l'orario in minuti
     //double timeTotal() const;

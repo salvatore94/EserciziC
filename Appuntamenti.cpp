@@ -26,10 +26,18 @@ void Appuntamenti::print (std::ostream &os) const {
        << "Fine: " << (this->getFine()).getOra() << ":" << (this->getFine()).getMinuti() << ":" << (this->getFine()).getSecondi() << endl
        << "Descrizione: " << (this->getDescrizione()) << endl;
 }
-
-
-
+/* //Test metodo durata utilizzando l'operatore- ed il copy constructor della classe Time
 double Appuntamenti::durata() const {
+    Time temp((this->getFine())-(this->getInizio()));
+
+    //calcolo la durata direttamente in minuti
+    double durata=(temp.getOra()*60)+(temp.getMinuti())+(temp.getSecondi()/60);
+
+    return durata;
+}
+*/
+double Appuntamenti::durata() const {
+    //calcolo la durata in secondi e divido per 60 ottenendo il risultato in minuti
     double durata = ((((this->getFine()).getSecondi() + (((this->getFine()).getMinuti())*60) + (((this->getFine()).getOra())*60*60)) / 60)
             - (((this->getInizio()).getSecondi() + (((this->getInizio()).getMinuti())*60) + (((this->getInizio()).getOra())*60*60)) / 60));
     return durata;

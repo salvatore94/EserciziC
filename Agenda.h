@@ -18,7 +18,10 @@ public:
     void aggiungi (Appuntamenti&);
     void cerca (const Time&) const;
     void cerca (const string&) const;
-    int dimensione() {return dati.size();}
+
+    //il metodo dimensione dovrebbe restituire un const int sempre,
+    //inoltre dovrebbe essere sempre un metodo costante
+    //const int dimensione() {return dati.size();}
     const int dimensione() const {return dati.size();}
 
     int getCount () { return count;}
