@@ -27,6 +27,6 @@ public:
 
     String& append (const String&);
     char* convertToC_String () const;
-    void print(std::ostream&);
+    std::ostream& print(std::ostream&);
 };
 #endif

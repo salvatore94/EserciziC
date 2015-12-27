@@ -78,10 +78,11 @@ char* String::convertToC_String () const {
     return temp;
 }
 
-void String::print (std::ostream &os) {
+std::ostream& String::print (std::ostream &os) {
     for(int i=0; i!=this->len(); ++i)
         os << data[i];
     os << std::endl;
+    return os;
 }
 
 String& String::append (const String &toappend) {

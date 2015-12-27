@@ -18,7 +18,7 @@ int main () {
     cout << s1.isEmpty() << endl;
     cout << "Lunghezza di s2 : " << s2.len() << endl;
     cout << "Contenuto di s2: " ;
-        s2.print(cout);
+         s2.print(cout);
 
     cout << "Lunghezza di s3 : " << s3.len() << endl;
     cout << "Contenuto di s3: " ;
