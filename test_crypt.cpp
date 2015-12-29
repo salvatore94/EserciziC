@@ -5,6 +5,7 @@ using std::endl;
 
 #include<fstream>
 using std::ofstream;
+using std::ifstream;
 using std::ios;
 
 int main() {
@@ -18,15 +19,21 @@ int main() {
     int altered= x^key;
     cout << "Valore alterato: " <<  altered << endl;
 
-    cout << "Valore originario: " << (altered^key) << endl;
+    //cout << "Valore originario: " << (altered^key) << endl;
 
-    // ofstream scrivi("test.txt", ios::binary);
-    // scrivi << altered<< endl;
-    //
-    // scrivi.close();
-    // int y=0;
-    // ofstream leggi("test.txt", ios::in|ios::binary);
-    // //while (leggi!= 0x0A)
-    //     cout << "Valore decifrato: " << (leggi^key) << endl;
+    ofstream scrivi("test.txt", ios::binary);
+    scrivi << altered<< endl;
+
+    scrivi.close();
+    ifstream leggi("test.txt", ios::binary);
+    
+    int y;
+    leggi >> y;
+    //cout << y ;
+
+    scrivi.open("test.txt", ios::in|ios::binary|ios::end);
+    scrivi << (y^key) ;
+
+    scrivi.close();
     return 0;
  }
