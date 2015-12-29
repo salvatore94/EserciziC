@@ -7,6 +7,7 @@ using std::endl;
 using std::ofstream;
 using std::ifstream;
 using std::ios;
+using std::ios_base;
 
 int main() {
 
@@ -32,8 +33,9 @@ int main() {
     //cout << y ;
 
     scrivi.open("test.txt", ios::in|ios::binary|ios::end);
-    scrivi << (y^key) ;
-
+    scrivi.seekp(2*sizeof(char), ios_base::beg); // l'operatore << tratta i valori come se fossero char
+    scrivi << (y^key) ;                       //  questa istruzione ci porta quindi alla terza posizione
+                                            // ovviamente quando andiamo ad aprire con hexedit ogni char è composto di 1 byte
     scrivi.close();
     return 0;
  }
