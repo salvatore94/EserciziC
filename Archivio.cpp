@@ -9,9 +9,9 @@
 #include "Archivio.hpp"
 void Archivio::addAlbum(const Album &toadd) {
     int count=0;
-    for(int i: dataAlbum)
+    for(int i=0; i!= this->dataAlbum.size(); ++i)
     //for(std::vector<Album&>::std::iterator it: dataAlbum)
-        if(this->getAlbum(i) == toadd)
+        if(this->getAlbum(i).getTitoloAlbum() == toadd.getTitoloAlbum())
             ++count;
     if(count==0)
         dataAlbum.push_back(toadd);
@@ -21,9 +21,9 @@ void Archivio::addAlbum(const Album &toadd) {
 
 void Archivio::addPlaylist(const Playlist &toadd) {
     int count=0;
-    for(int i: dataPlaylist)
+    for(int i=0; i!= this->dataPlaylist.size(); ++i)
         //for(std::vector<Album&>::std::iterator it: dataAlbum)
-        if(this->getPlaylist(i) == toadd)
+        if(this->getPlaylist(i).getNomePlaylist() == toadd.getNomePlaylist())
             ++count;
     if(count==0)
         dataPlaylist.push_back(toadd);
@@ -32,13 +32,19 @@ void Archivio::addPlaylist(const Playlist &toadd) {
 }
 
 std::ostream& Archivio::stampaAlbum(std::ostream &os) {
-    for (int i: dataAlbum)
-        std::cout << i << ". " << this->getAlbum(i).stampaListaBrani(std::cout) << std::endl;
+    for (int i=0; i!= this->dataAlbum.size(); ++i){
+        os << i << ". " ;
+    this->getAlbum(i).stampaListaBrani(os);
+    os << std::endl;
+    }
     return os;
 }
 
 std::ostream& Archivio::stampaPlaylist(std::ostream &os) {
-    for (int i: dataPlaylist)
-        std::cout << i << ". " << this->getPlaylist(i).stampaListaBrani(std::cout) << std::endl;
+    for (int i=0; i!= this->dataPlaylist.size(); ++i) {
+        os << i << ". ";
+    this->getPlaylist(i).stampaListaBrani(os);
+    os << std::endl;
+    }
     return os;
 }
