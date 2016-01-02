@@ -21,6 +21,18 @@ Brano::Brano() : Brano ("test", "", "---") //creo un oggetto  di test nel caso i
 #endif
 }
 
+Brano& Brano::operator= (const Brano &tocopy) {
+    if(this->getTitolo() == tocopy.getTitolo())
+        return *this;
+    else {
+        this->setTitolo(tocopy.getTitolo());
+        this->setNomeFile(tocopy.getNomeFile());
+        this->setCantante(tocopy.getCantante());
+        
+        return *this;
+    }
+}
+
 
 void Brano::setTitolo (std::string _titolo) {
     if (_titolo.empty())

@@ -19,6 +19,8 @@ public:
     Brano();
     Brano (std::string,std::string,std::string);
     
+
+    
     void setTitolo (std::string);
     void setNomeFile (std::string);
     void setCantante (std::string);
